@@ -36,7 +36,7 @@ N = 1000; % number of vortices
 
 %% Plot stream function at levels
 figure
-contourf(x,y,Psi,100) % stream function
+contourf(x,y,Psi,75) % stream function
 hold on 
 plot([0 c],[0 0],'k','linewidth',2) % airfoil
 axis equal
@@ -63,6 +63,8 @@ hold on
 plot([0 c],[0 0],'k','linewidth',2) % airfoil
 axis equal
 axis(bounds)
+k = colorbar;
+k.Label.String = 'Pressure [Pa]';
 ylabel('y')
 xlabel('x')
 title(['Pressure Contours for N = ' num2str(N2) ' Vorticies']);
@@ -127,20 +129,20 @@ hold off
 % plot V.P.
 figure
 subplot(3,1,1)
-contourf(x_c2,y_c2,Phi_c2,100) % stream function
+contourf(x_c2,y_c2,Phi_c2,100) % velocity potential
 hold on 
 plot([0 c2],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_c2)
 title(['Equipotential Lines for N = ' num2str(N) ' Vorticies at c = ' num2str(c2) ' [m]']);
 subplot(3,1,2)
-contourf(x_c5,y_c5,Phi_c5,100) % stream function
+contourf(x_c5,y_c5,Phi_c5,100) % velocity potential
 hold on
 plot([0 c5],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_c5)
 title(['Equipotential Lines for N = ' num2str(N) ' Vorticies at c = ' num2str(c5) ' [m]']);
 ylabel('y')
 subplot(3,1,3)
-contourf(x_c8,y_c8,Phi_c8,100) % stream function
+contourf(x_c8,y_c8,Phi_c8,100) % velocity potential
 hold on
 plot([0 c8],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_c8)
@@ -198,20 +200,20 @@ hold off
 % plot V.P.
 figure
 subplot(3,1,1)
-contourf(x_a5,y_a5,Phi_a5,100) % stream function
+contourf(x_a5,y_a5,Phi_a5,100) % velocity potential
 hold on 
 plot([0 c],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_a5)
 title(['Equipotential Lines for N = ' num2str(N) ' Vorticies at \alpha = ' num2str(5) '^{o}']);
 subplot(3,1,2)
-contourf(x_a10,y_a10,Phi_a10,100) % stream function
+contourf(x_a10,y_a10,Phi_a10,100) % velocity potential
 hold on
 plot([0 c],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_a10)
 title(['Equipotential Lines for N = ' num2str(N) ' Vorticies at \alpha = ' num2str(10) '^{o}']);
 ylabel('y')
 subplot(3,1,3)
-contourf(x_a15,y_a15,Phi_a15,100) % stream function
+contourf(x_a15,y_a15,Phi_a15,100) % velocity potential
 hold on
 plot([0 c],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_a15)
@@ -220,7 +222,6 @@ xlabel('x')
 hold off
 
 fprintf('figures 7 & 8 display how the stream function and the velocity\npotential change as the angle of attack changes. When looking\nat the figures to view how the angle of attack affects the two\nit is seen that the angle of attack does have an effect\non the stream function or the velocity potential.\n\n');
-
 
 %% Study on how free-stream flow speed changes S.F., V.P., and P.C.
 % last input determines what runs in the function:
@@ -270,20 +271,20 @@ hold off
 % plot V.P.
 figure
 subplot(3,1,1)
-contourf(x_v25,y_v25,Phi_v25,100) % stream function
+contourf(x_v25,y_v25,Phi_v25,100) % velocity potential
 hold on 
 plot([0 c],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_v25)
 title(['Equipotential Lines for N = ' num2str(N) ' Vorticies at V = ' num2str(V_inf_25) ' [m/s]']);
 subplot(3,1,2)
-contourf(x_v50,y_v50,Phi_v50,100) % stream function
+contourf(x_v50,y_v50,Phi_v50,100) % velocity potential
 hold on
 plot([0 c],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_v50)
 title(['Equipotential Lines for N = ' num2str(N) ' Vorticies at V = ' num2str(V_inf) ' [m/s]']);
 ylabel('y')
 subplot(3,1,3)
-contourf(x_v75,y_v75,Phi_v75,100) % stream function
+contourf(x_v75,y_v75,Phi_v75,100) % velocity potential
 hold on
 plot([0 c],[0 0],'k','linewidth',2) % airfoil
 axis(bounds_v75)
